@@ -10,38 +10,31 @@ class Bandpass:
     Parameters
     ----------
     filename : str
-        Location and name of file where bandpass is stored
-        Must be a file with two columns: wavelength and bandpass throughput
+        Location and name of file where bandpass is stored.
+        Must be a file with two columns: wavelength and bandpass throughput.
     name : str
         Name of bandpass
     dlambda : float
-        Width of wavelength grid on which bandpass will be sampled
+        Width of wavelength grid on which bandpass will be sampled.
         Default = 10
 
     Attributes
     ----------
     wavelen : numpy.ndarray
-        Bandpass wavelength grid
-        Range determined from the wavelengths in the provided file
-        Resampled on wavelength grid with width dlambda
+        Bandpass wavelength grid.
+        Range determined from the wavelengths in the provided file.
+        Resampled on wavelength grid with width dlambda.
     T : numpy.ndarray
-        Bandpass throughput from the provided file
+        Bandpass throughput from the provided file.
     R : numpy.ndarray
         Bandpass normalized response function, defined
         :math:`R = \lambda T(\lambda) / \int(\lambda T(\lambda) d\lambda)`
     mean_wavelen: float
         Mean wavelength of the bandpass, defined
-        :math:`\lambda_{\mathrm{mean}} = `\int \lambda R(\lambda) d\lambda`
+        :math:`\lambda_{\mathrm{mean}} = \int \lambda R(\lambda) d\lambda`
     eff_width: float
         Effective width of the bandpass, defined
         :math:`W_{\mathrm{eff}} = \max{[R(\lambda)]}^{-1}`
-
-    Methods
-    -------
-    flux(seds)
-        Return flux through the bandpass for the provided sed(s)
-        NEED TO IMPLEMENT
-
     """
 
     def __init__(self, filename: str, name: str = None, dlambda: float = 10):
@@ -77,7 +70,7 @@ class Bandpass:
 
     def flux(self, seds) -> np.ndarray:
         """
-        Return flux through the bandpass for the provided sed(s)
+        Return flux through the bandpass for the provided sed(s).
 
         Parameters
         ----------
@@ -86,8 +79,8 @@ class Bandpass:
         Returns
         -------
         np.ndarray
-            Array of fluxes
-            If only a single SED is given, array is squeezed
+            Array of fluxes.
+            If only a single SED is given, array is squeezed.
         """
         raise NotImplementedError
 
