@@ -1,3 +1,7 @@
+![build](https://github.com/jfcrenshaw/GausSED/workflows/build/badge.svg)
+[![codecov](https://codecov.io/gh/jfcrenshaw/GausSED/branch/main/graph/badge.svg?token=PBkUC6rUYp)](https://codecov.io/gh/jfcrenshaw/GausSED)
+
+
 # GausSED
 Deconvolving SED's from photometry using Interdomain Stochastic Variational Gaussian Processes (I-SVGP) 
 
